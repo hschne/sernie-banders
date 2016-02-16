@@ -1,24 +1,20 @@
 walk(document.body);
-window.addEventListener('neverEndingLoad', function(e) {
+
+//Event listener for RES
+window.addEventListener('neverEndingLoad', function () {
     walk(document.body)
 });
 
-
-function walk(node)
-{
+function walk(node) {
     // I stole this function from cloud-to-butt:
     // https://github.com/panicsteve/cloud-to-butt
-
     var child, next;
-
-    switch ( node.nodeType )
-    {
+    switch (node.nodeType) {
         case 1:  // Element
         case 9:  // Document
         case 11: // Document fragment
             child = node.firstChild;
-            while ( child )
-            {
+            while (child) {
                 next = child.nextSibling;
                 walk(child);
                 child = next;
@@ -31,8 +27,7 @@ function walk(node)
     }
 }
 
-function handleText(textNode)
-{
+function handleText(textNode) {
     var v = textNode.nodeValue;
 
     v = v.replace(/\bBernie Sanders'\b/g, getSynonym(true));
@@ -44,7 +39,7 @@ function handleText(textNode)
     textNode.nodeValue = v;
 }
 
-function getSynonym(posessive){
+function getSynonym(posessive) {
     var possibleSynonyms = [
         "Sernie Banders",
         "Our Lord And Savior",
@@ -55,17 +50,15 @@ function getSynonym(posessive){
         "Super Bern",
         "He-Who-Must-Not-Be-Shamed"
     ];
-    var synonym = possibleSynonyms[Math.floor(Math.random()*possibleSynonyms.length)];
-    if (posessive){
+    var synonym = possibleSynonyms[Math.floor(Math.random() * possibleSynonyms.length)];
+    if (posessive) {
         synonym = synonym + getAttachment(synonym);
     }
     return synonym;
-
-
 }
 
-function getAttachment(synonym){
-    if(synonym.slice(-1) == "s"){
+function getAttachment(synonym) {
+    if (synonym.slice(-1) == "s") {
         return "'"
     }
     else {
