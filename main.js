@@ -1,4 +1,8 @@
 walk(document.body);
+window.addEventListener('neverEndingLoad', function(e) {
+    walk(document.body)
+});
+
 
 function walk(node)
 {
@@ -31,11 +35,16 @@ function handleText(textNode)
 {
     var v = textNode.nodeValue;
 
+    v = v.replace(/\bBernie Sanders'\b/g, getSynonym(true));
     v = v.replace(/\bBernie Sanders\b/g, getSynonym());
+    v = v.replace(/\bSanders'\b/g, getSynonym(true));
+    v = v.replace(/\bSanders\b/g, getSynonym());
+    v = v.replace(/\bBernie\b/g, getSynonym());
+
     textNode.nodeValue = v;
 }
 
-function getSynonym(){
+function getSynonym(posessive){
     var possibleSynonyms = [
         "Sernie Banders",
         "Our Lord And Savior",
@@ -47,5 +56,19 @@ function getSynonym(){
         "He-Who-Must-Not-Be-Shamed"
     ];
     var synonym = possibleSynonyms[Math.floor(Math.random()*possibleSynonyms.length)];
+    if (posessive){
+        synonym = synonym + getAttachment(synonym);
+    }
     return synonym;
+
+
+}
+
+function getAttachment(synonym){
+    if(synonym.slice(-1) == "s"){
+        return "'"
+    }
+    else {
+        return "'s"
+    }
 }
