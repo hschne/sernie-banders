@@ -2,11 +2,14 @@
   "manifest_version": 2,
   "name": "Sernie Banders",
   "version": "1.0",
-  "description": "A plain text description",
+  "description": "Making The Front Page Great Again.",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": [ "bower_components/jquery/dist/jquery.js", "main.js"]
+      "js": [ "main.js"]
     }
-  ]
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png" }
 }
