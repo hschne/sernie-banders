@@ -1,0 +1,21 @@
+{
+  "name": "sernie-banders",
+  "homepage": "https://github.com/hschroedl/sernie-banders",
+  "authors": [
+    "hschroedl <hansj.schroedl@gmail.com>"
+  ],
+  "description": "A chrome extension for making the front page great again",
+  "main": "main.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}
