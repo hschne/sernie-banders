@@ -11,7 +11,7 @@ the front page of Reddit in recent months by replacing occurences of the term
 
 ## Installation
 
-1. Install extension from the Chrome Web Store. 
+1. Install extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/sernie-banders/fnpkkbpjbkhkckgkbhhdhglmchcpncji). 
 2. Done. 
 
 ## License
