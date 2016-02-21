@@ -48,7 +48,8 @@ function getSynonym(posessive) {
         "Grey Eel",
         "The Only Consistent Politician",
         "Super Bern",
-        "He-Who-Must-Not-Be-Shamed"
+        "He-Who-Must-Not-Be-Shamed",
+        "The Most Experienced Politician"
     ];
     var synonym = possibleSynonyms[Math.floor(Math.random() * possibleSynonyms.length)];
     if (posessive) {
