@@ -49,7 +49,8 @@ function getSynonym(posessive) {
         "The Only Consistent Politician",
         "Super Bern",
         "He-Who-Must-Not-Be-Shamed",
-        "The Most Experienced Politician"
+        "The Most Experienced Politician",
+        "Bernie Sandwiches"
     ];
     var synonym = possibleSynonyms[Math.floor(Math.random() * possibleSynonyms.length)];
     if (posessive) {
